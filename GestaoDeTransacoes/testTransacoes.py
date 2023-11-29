@@ -18,3 +18,11 @@ class TesteTransacoesDeInventario(unittest.TestCase):
         # Verificando se a transação foi registrada corretamente
         self.assertTrue(resultado)
 
+    def teste_registrar_venda_com_quantidade_negativa(self):
+            
+        gerenciador = GerenciadorDeInventario()
+        id_produto = "12345"
+        quantidade_negativa = -10
+
+        with self.assertRaises(ValorInvalidoException):
+            gerenciador.registrar_venda(id_produto, quantidade_negativa)
