@@ -25,3 +25,9 @@ def test_produto_missing_arguments():
         produto = Produto(
             None, "123456789", 10.0, 20.0, 50, "1", "22/10/2026"
         )
+
+def test_produto_missing_arguments_dois():
+    with pytest.raises(DescricaoEmBrancoException):
+        produto = Produto(
+            "Tenis Nike", None, 150.20, 400.0, 1, "2", "15/12/2022"
+        )
