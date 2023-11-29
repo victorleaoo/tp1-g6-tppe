@@ -12,7 +12,13 @@ class Produto:
         lote,
         data_validade
     ):
-        if (nome is None):
+        if (nome is None or
+            codigo_barras is None or
+            preco_compra is None or
+            preco_venda is None or
+            quantidade_inicial is None or
+            lote is None or
+            data_validade is None):
             raise DescricaoEmBrancoException("Todos os atributos devem estar presentes!")
 
         self.nome = nome
