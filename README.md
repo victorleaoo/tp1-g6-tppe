@@ -10,6 +10,8 @@
 - Victor Hugo Oliveira Leão: 200028367
 - Vinicius Assumpcao de Araujo: 200028472
 
+O projeto foi desenvolvido na linguagem **Python** e para rodar os testes, basta rodar o comando: `pytest <test_arquivo>.py`.
+
 ## Entendimento do problema
 
 ### Diagrama
@@ -23,9 +25,9 @@ O trabalho deverá apresentar o emprego das três técnicas de TDD (falsificaç�
 * **Cadastro de Produtos:**
   - Garantir que o produto está cadastrado no sistema informando
     obrigatoriamente o nome do produto, seu código de barras, preço de compra, 
-    preço de venda e quantidade inicial em estoque. 
+    preço de venda e quantidade inicial em estoque. -> **OK**
   - Se algum desses itens acima não for informando, garantir que o produto não
-    seja cadastrado através do lançamento da exceção `DescricaoEmBrancoException`.
+    seja cadastrado através do lançamento da exceção `DescricaoEmBrancoException`. -> **OK**
   - Se os valores de compra e venda e a quantidade de itens inicial em estoque
     for menor ou igual a zero, garantir que o item não seja cadastrado através
     do lançamento da exceção `ValorInvalidoException`.  
@@ -46,14 +48,14 @@ O trabalho deverá apresentar o emprego das três técnicas de TDD (falsificaç�
 * **Rastreamento de Lotes e Validade:**
   - Permite o rastreamento detalhado de lotes de produtos, especialmente útil para itens com data de validade. O sistema pode alertar sobre produtos próximos ao vencimento.
 
-#### 
-
 ## Padrão de Commit
 
 Para cada funcionalidade desenvolvida por meio do **TDD**, os *commits* devem ocorrer na seguinte ordem e seguindo o seguinte padrão:
 
-- **falsificação**: git commit -m "falsificacao: <funcionalidade_desenvolvida>";
-- **duplicação**: git commit -m "duplicação: <funcionalidade_desenvolvida>";
-- **triangulação**: git commit -m "triangulação: <funcionalidade_desenvolvida>";
-
-Todas as funcionalidades também devem conter **testes parametrizados**.
+- **falsificaçãoFalha**: git commit -m "falsificacaoFalha: <funcionalidade_desenvolvida>";
+- **falsificaçãoPassa**: git commit -m "falsificacaoPassa: <funcionalidade_desenvolvida>";
+- **duplicaçãoFalha**: git commit -m "duplicaçãoFalha: <funcionalidade_desenvolvida>";
+- **duplicaçãoPassa**: git commit -m "duplicaçãoPassa: <funcionalidade_desenvolvida>";
+- **triangulaçãoFalha**: git commit -m "triangulaçãoFalha: <funcionalidade_desenvolvida>";
+- **triangulaçãoPassa**: git commit -m "triangulaçãoPassa: <funcionalidade_desenvolvida>";
+- **parametrizacao**: git commit -m "parametrizacao: <funcionalidade_desenvolvida>";
