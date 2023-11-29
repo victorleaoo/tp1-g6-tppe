@@ -1,12 +1,18 @@
+class DescricaoEmBrancoException(Exception):
+    pass
+
 class Produto:
-    def __init__(self, 
-    nome, 
-    codigo_barras, 
-    preco_compra, 
-    preco_venda, 
-    quantidade_inicial,
-    lote,
-    data_validade):
+    def __init__(
+        self, 
+        nome, 
+        codigo_barras, 
+        preco_compra, 
+        preco_venda, 
+        quantidade_inicial,
+        lote,
+        data_validade
+    ):
+
         self.nome = nome
         self.codigo_barras = codigo_barras
         self.preco_compra = preco_compra
