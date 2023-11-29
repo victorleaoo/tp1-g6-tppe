@@ -12,6 +12,8 @@ class Produto:
         lote,
         data_validade
     ):
+        if (nome is None):
+            raise DescricaoEmBrancoException("Todos os atributos devem estar presentes!")
 
         self.nome = nome
         self.codigo_barras = codigo_barras
