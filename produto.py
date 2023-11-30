@@ -37,3 +37,9 @@ class Produto:
     def consulta_estoque_codigo(self, codigo): 
         if self.codigo_barras == codigo: 
             return self 
+        
+    def consulta_estoque(self, nome, codigo): 
+        if self.nome == nome  and self.codigo_barras == codigo:
+            return self 
+        else:  
+            return ''
