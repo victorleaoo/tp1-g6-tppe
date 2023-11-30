@@ -20,7 +20,9 @@ class Produto:
             preco_venda is None or
             quantidade_inicial is None or
             lote is None or
-            data_validade is None):
+            data_validade is None or
+            data_validade.strip() == ""
+            ):
             raise DescricaoEmBrancoException("Todos os atributos devem estar presentes!")
 
         self.nome = nome
