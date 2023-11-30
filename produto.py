@@ -11,7 +11,7 @@ class Produto:
         quantidade_inicial,
         lote,
         data_validade,
-        limite_estoque=10
+        limite_estoque=10 #limite padrão
     ):
         if (nome is None or
             codigo_barras is None or
@@ -32,4 +32,4 @@ class Produto:
         self.limite_estoque = limite_estoque
 
     def verificar_estoque_baixo(self):
-        return self.quantidade_inicial <= self.limite_estoque
+        return self.quantidade_inicial <= int(self.limite_estoque)
