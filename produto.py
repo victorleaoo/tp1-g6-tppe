@@ -4,13 +4,13 @@ class DescricaoEmBrancoException(Exception):
 class Produto:
     def __init__(
         self, 
-        nome, 
         codigo_barras, 
         preco_compra, 
         preco_venda, 
         quantidade_inicial,
         lote,
-        data_validade
+        data_validade,
+        nome = 'Produto A'
     ):
         if (nome is None or
             codigo_barras is None or
@@ -28,3 +28,7 @@ class Produto:
         self.quantidade_inicial = quantidade_inicial
         self.lote = lote
         self.data_validade = data_validade
+
+
+    def consulta_estoque_nome(self):
+        return self.nome
