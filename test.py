@@ -63,3 +63,15 @@ def test_cadastro_produto_com_preco_venda_e_quantidade_inicial_invalidos():
             lote="10",
             data_validade="02/02/2024"
         )
+
+def test_cadastro_produto_com_preco_compra_preco_venda_e_quantidade_inicial_invalidos():
+    with pytest.raises(ValorInvalidoException):
+        Produto(
+            nome="Produto com preco de compra, preco de venda e quantidade inicial invalidos",
+            codigo_barras="789987789",
+            preco_compra=-3,
+            preco_venda=0, 
+            quantidade_inicial=-7,
+            lote="09",
+            data_validade="12/12/2025"
+        )
