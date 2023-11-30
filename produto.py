@@ -32,4 +32,4 @@ class Produto:
         self.limite_estoque = limite_estoque
 
     def verificar_estoque_baixo(self):
-        return self.quantidade_inicial < self.limite_estoque
+        return self.quantidade_inicial <= self.limite_estoque
