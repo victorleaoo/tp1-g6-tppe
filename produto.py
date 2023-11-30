@@ -10,7 +10,7 @@ class Produto:
         quantidade_inicial,
         lote,
         data_validade,
-        nome = 'Produto A'
+        nome
     ):
         if (nome is None or
             codigo_barras is None or
@@ -30,5 +30,7 @@ class Produto:
         self.data_validade = data_validade
 
 
-    def consulta_estoque_nome(self):
-        return self.nome
+    def consulta_estoque_nome(self, nome):
+        if self.nome == nome:
+            return self
+    
