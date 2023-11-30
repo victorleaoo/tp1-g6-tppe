@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta
+
 class DescricaoEmBrancoException(Exception):
     pass
 
@@ -28,3 +30,8 @@ class Produto:
         self.quantidade_inicial = quantidade_inicial
         self.lote = lote
         self.data_validade = data_validade
+
+    def esta_no_periodo_de_validade(self):
+        data_atual = datetime.now()
+        data_validade_produto = datetime.strptime(self.data_validade, "%d/%m/%Y")
+        return data_validade_produto >= data_atual
