@@ -10,7 +10,8 @@ class Produto:
         preco_venda, 
         quantidade_inicial,
         lote,
-        data_validade
+        data_validade,
+        limite_estoque=10
     ):
         if (nome is None or
             codigo_barras is None or
@@ -28,3 +29,7 @@ class Produto:
         self.quantidade_inicial = quantidade_inicial
         self.lote = lote
         self.data_validade = data_validade
+        self.limite_estoque = limite_estoque
+
+    def verificar_estoque_baixo(self):
+        return self.quantidade_inicial < self.limite_estoque
