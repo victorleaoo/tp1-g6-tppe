@@ -25,6 +25,6 @@ def test_produto_na_validade():
             preco_venda=15.20,
             quantidade_inicial=10,
             lote=0,
-            data_validade="15/05/2025"
+            data_validade=""
         )
     assert "produto" not in locals()
