@@ -1,6 +1,9 @@
 class DescricaoEmBrancoException(Exception):
     pass
 
+class ValorInvalidoException(Exception):
+    pass
+
 class Produto:
     def __init__(
         self, 

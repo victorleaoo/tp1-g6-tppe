@@ -1,5 +1,5 @@
 import pytest
-from produto import Produto, DescricaoEmBrancoException
+from produto import Produto, DescricaoEmBrancoException, ValorInvalidoException
 
 def test_cadastro_produto():
     produto = Produto(
@@ -38,4 +38,16 @@ def test_produto_missing_arguments(nome, codigo_barras, preco_compra, preco_vend
     with pytest.raises(DescricaoEmBrancoException):
         produto = Produto(
             nome, codigo_barras, preco_compra, preco_venda, quantidade_inicial, lote, data_validade
+        )
+
+def test_cadastro_produto_com_preco_compra_invalido():
+    with pytest.raises(ValorInvalidoException):
+        Produto(
+            nome="Produto com preco de compra invalido",
+            codigo_barras="123321123",
+            preco_compra=0,
+            preco_venda=10, 
+            quantidade_inicial=2,
+            lote="02",
+            data_validade="01/01/2025"
         )
