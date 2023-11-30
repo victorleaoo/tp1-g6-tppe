@@ -23,6 +23,9 @@ class Produto:
             lote is None or
             data_validade is None):
             raise DescricaoEmBrancoException("Todos os atributos devem estar presentes!")
+        
+        if (preco_compra == 0):
+            raise ValorInvalidoException("Valor de compra, valor de venda e quantidade inicial de itens devem ser positivos!")
 
         self.nome = nome
         self.codigo_barras = codigo_barras
