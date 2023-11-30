@@ -24,7 +24,7 @@ class Produto:
             data_validade is None):
             raise DescricaoEmBrancoException("Todos os atributos devem estar presentes!")
         
-        if (preco_compra == 0 or (preco_venda == -1 and quantidade_inicial == -2)):
+        if (preco_compra <= 0 or preco_venda <= 0 or quantidade_inicial <= 0):
             raise ValorInvalidoException("Valor de compra, valor de venda e quantidade inicial de itens devem ser positivos!")
 
         self.nome = nome
