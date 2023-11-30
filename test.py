@@ -75,3 +75,11 @@ def test_cadastro_produto_com_preco_compra_preco_venda_e_quantidade_inicial_inva
             lote="09",
             data_validade="12/12/2025"
         )
+
+@pytest.mark.parametrize(
+    "preco_compra, preco_venda, quantidade_inicial",
+    [(-1, 10.0, 10), (10.0, 0, 10), (10.0, 20.0, -5), (-10.0, 0, -1)]
+)
+def test_valores_invalidos_parametrizados(preco_compra, preco_venda, quantidade_inicial):
+    with pytest.raises(ValorInvalidoException):
+        Produto("Teste", "123", preco_compra, preco_venda, quantidade_inicial, "01", "01/01/2025")
