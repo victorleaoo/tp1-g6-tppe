@@ -2,6 +2,7 @@ class Fornecedor:
     def __init__(self, id, nome, endereco, data_contrato):
         self.validar_id(id)
         self.validar_nome(nome)
+        self.validar_endereco(endereco)
         self.id = id
         self.nome = nome
         self.endereco = endereco
@@ -18,3 +19,8 @@ class Fornecedor:
     def validar_nome(nome):
         if nome is None or nome == '':
             raise ValueError("Nome não pode ser nulo ou vazio")
+
+    @staticmethod
+    def validar_endereco(endereco):
+        if endereco is None or endereco == '':
+            raise ValueError("Endereço não pode ser nulo ou vazio")
