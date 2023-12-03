@@ -8,5 +8,5 @@ class Fornecedor:
     
     @staticmethod
     def validar_id(id):
-        if id is None:
+        if id is None or id is '':
             raise ValueError("ID não pode ser nulo")
