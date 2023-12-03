@@ -1,4 +1,5 @@
 import unittest
+from parameterized import parameterized
 from fornecedor import Fornecedor
 
 class TestFornecedor(unittest.TestCase):
@@ -32,6 +33,16 @@ class TestFornecedor(unittest.TestCase):
     def test_criar_fornecedor_data_invalida(self):
         with self.assertRaises(ValueError):
             Fornecedor(1, "Fornecedor E", "Endereço E", "data_invalida")
+
+    @parameterized.expand([
+        (None, "Fornecedor B", "Endereço B", "2023-01-01"),
+        ('', "Fornecedor C", "Endereço C", "2023-01-01"),
+        ("abc", "Fornecedor D", "Endereço D", "2023-01-01"),
+        (123.5, "Fornecedor E", "Endereço E", "2023-01-01")  # Adicionando um número decimal para testar
+    ])
+    def test_criar_fornecedor_com_id_invalido_param(self, id, nome, endereco, data_contrato):
+        with self.assertRaises(ValueError):
+            Fornecedor(id, nome, endereco, data_contrato)
         
 if __name__ == '__main__':
     unittest.main()
