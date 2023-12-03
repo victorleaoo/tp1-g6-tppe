@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import pytest
-from produto import Produto, DescricaoEmBrancoException
+from main.produto import Produto, DescricaoEmBrancoException
 from datetime import datetime, timedelta
 
 def test_produto_fora_validade():

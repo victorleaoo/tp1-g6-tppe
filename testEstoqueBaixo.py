@@ -1,5 +1,5 @@
 import pytest
-from produto import Produto, DescricaoEmBrancoException
+from main.Produto import Produto, DescricaoEmBrancoException
 
 def test_alerta_estoque_baixo():
     produto = Produto("Produto A", "1234567890", 10.0, 15.0, 5, "Lote A", "2023-12-31")
@@ -56,9 +56,9 @@ def test_estoque_com_valores_incomuns():
 ])
 def test_variados(nome, codigo_barras, preco_compra, preco_venda, quantidade_inicial, lote, data_validade, limite_estoque, alterar_limite, esperado):
     if limite_estoque is None:
-        produto = Produto(nome, codigo_barras, preco_compra, preco_venda, quantidade_inicial, lote, data_validade)
+        produto = Produto(nome=nome, codigo_barras=codigo_barras, preco_compra=preco_compra, preco_venda=preco_venda, quantidade_inicial=quantidade_inicial, lote=lote, data_validade=data_validade)
     else:
-        produto = Produto(nome, codigo_barras, preco_compra, preco_venda, quantidade_inicial, lote, data_validade, limite_estoque)
+        produto = Produto(nome=nome, codigo_barras=codigo_barras, preco_compra=preco_compra, preco_venda=preco_venda, quantidade_inicial=quantidade_inicial, lote=lote, data_validade=data_validade, limite_estoque=limite_estoque)
 
     if alterar_limite is not None:
         produto.limite_estoque = alterar_limite

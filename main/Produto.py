@@ -9,13 +9,14 @@ class ValorInvalidoException(Exception):
 class Produto:
     def __init__(
         self, 
+        nome,
         codigo_barras, 
         preco_compra, 
         preco_venda, 
         quantidade_inicial,
         lote,
         data_validade,
-        nome
+        limite_estoque=10
     ):
         if (nome is None or
             codigo_barras is None or
@@ -28,7 +29,7 @@ class Produto:
             ):
             raise DescricaoEmBrancoException("Todos os atributos devem estar presentes!")
         
-        if (preco_compra <= 0 or preco_venda <= 0 or quantidade_inicial <= 0):
+        if (preco_compra <= 0.0 or preco_venda <= 0.0 or quantidade_inicial <= 0.0):
             raise ValorInvalidoException("Valor de compra, valor de venda e quantidade inicial de itens devem ser positivos!")
 
         self.nome = nome
@@ -38,7 +39,7 @@ class Produto:
         self.quantidade_inicial = quantidade_inicial
         self.lote = lote
         self.data_validade = data_validade
-        self.limite_estoque = 10
+        self.limite_estoque = limite_estoque
 
     def esta_no_periodo_de_validade(self):
         data_atual = datetime.now()

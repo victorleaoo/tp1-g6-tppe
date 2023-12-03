@@ -1,4 +1,4 @@
-from produto import *
+from main.Produto import *
 
 class ValorInvalidoException(Exception):
     pass

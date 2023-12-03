@@ -1,6 +1,6 @@
 import unittest
-from GestaoTransacoes import GerenciadorDeInventario, ValorInvalidoException
-from produto import Produto, DescricaoEmBrancoException
+from main.GestaoTransacoes import GerenciadorDeInventario, ValorInvalidoException
+from main.produto import Produto, DescricaoEmBrancoException
 
 class TesteTransacoesDeInventario(unittest.TestCase):
 
@@ -83,3 +83,6 @@ class TesteTransacoesDeInventario(unittest.TestCase):
         lote = "LoteA"
         with self.assertRaises(ValorInvalidoException):
             self.gerenciador.registrar_ajuste(codigo_barras, quantidade_ajuste_negativa, lote)
+
+if __name__ == "__main__":
+    unittest.main()

@@ -1,5 +1,5 @@
 import pytest
-from produto import Produto, DescricaoEmBrancoException, ValorInvalidoException
+from main.Produto import Produto, DescricaoEmBrancoException, ValorInvalidoException
 
 def test_cadastro_produto():
     produto = Produto(
@@ -78,8 +78,8 @@ def test_cadastro_produto_com_preco_compra_preco_venda_e_quantidade_inicial_inva
 
 @pytest.mark.parametrize(
     "preco_compra, preco_venda, quantidade_inicial",
-    [(-1, 10.0, 10), (10.0, 0, 10), (10.0, 20.0, -5), (-10.0, 0, -1)]
+    [(-1.0, 10.0, 10), (10.0, 0.0, 10), (10.0, 20.0, -5.0), (-10.0, 0.0, -1.0)]
 )
 def test_valores_invalidos_parametrizados(preco_compra, preco_venda, quantidade_inicial):
     with pytest.raises(ValorInvalidoException):
-        Produto("Teste", "123", preco_compra, preco_venda, quantidade_inicial, "01", "01/01/2025")
+        Produto(nome="Teste", codigo_barras="123", preco_compra=preco_compra, preco_venda=preco_venda, quantidade_inicial=quantidade_inicial, lote="01", data_validade="01/01/2025")
