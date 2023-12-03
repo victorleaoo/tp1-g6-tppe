@@ -10,7 +10,11 @@
 - Victor Hugo Oliveira Leão: 200028367
 - Vinicius Assumpcao de Araujo: 200028472
 
-O projeto foi desenvolvido na linguagem **Python** e para rodar os testes, basta rodar o comando: `pytest <test_arquivo>.py`.
+### Execução
+
+O projeto foi desenvolvido na linguagem **Python** com a biblioteca **pytest**. Então, com o Python instalado na máquina, rode os comandos:
+1. Instale o pytest: `pip install pytest`;
+2. Rode o arquivo com os testes das funcionalidades desejadas por meio de: `pytest <test_arquivo>.py` ou `python3 -m pytest <test_arquivo>.py`
 
 ## Entendimento do problema
 
