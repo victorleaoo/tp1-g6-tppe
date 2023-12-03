@@ -8,3 +8,10 @@ class TestFornecedor(unittest.TestCase):
         self.assertEqual(fornecedor.nome, "Fornecedor A")
         self.assertEqual(fornecedor.endereco, "Endereço A")
         self.assertEqual(fornecedor.data_contrato, "2023-01-01")
+
+    def test_criar_fornecedor_com_id_invalido(self):
+        with self.assertRaises(ValueError):
+            Fornecedor(None, "Fornecedor B", "Endereço B", "2023-01-01")
+        
+if __name__ == '__main__':
+    unittest.main()
