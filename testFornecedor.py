@@ -1,6 +1,6 @@
 import unittest
 from parameterized import parameterized
-from fornecedor import Fornecedor
+from main.Fornecedor import Fornecedor
 
 class TestFornecedor(unittest.TestCase):
     def test_criar_fornecedor_valido(self):
