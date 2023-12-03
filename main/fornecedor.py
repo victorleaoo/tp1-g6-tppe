@@ -14,9 +14,9 @@ class Fornecedor:
     @staticmethod
     def validar_id(id):
         if id is None or id == '':
-            raise ValueError("ID não pode ser nulo")
-        if isinstance(id, str):
-            raise ValueError("ID não pode ser uma string")
+            raise ValueError("ID não pode ser nulo ou vazio")
+        if not isinstance(id, int):
+            raise ValueError("ID deve ser um número inteiro")
 
     @staticmethod
     def validar_nome(nome):
