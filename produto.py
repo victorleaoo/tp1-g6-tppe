@@ -7,13 +7,13 @@ class ValorInvalidoException(Exception):
 class Produto:
     def __init__(
         self, 
-        nome, 
         codigo_barras, 
         preco_compra, 
         preco_venda, 
         quantidade_inicial,
         lote,
-        data_validade
+        data_validade,
+        nome
     ):
         if (nome is None or
             codigo_barras is None or
@@ -34,3 +34,18 @@ class Produto:
         self.quantidade_inicial = quantidade_inicial
         self.lote = lote
         self.data_validade = data_validade
+
+
+    def consulta_estoque_nome(self, nome):
+        if self.nome == nome:
+            return self
+
+    def consulta_estoque_codigo(self, codigo): 
+        if self.codigo_barras == codigo: 
+            return self 
+        
+    def consulta_estoque(self, nome, codigo): 
+        if self.nome == nome  and self.codigo_barras == codigo:
+            return self 
+        else:  
+            return ''
