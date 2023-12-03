@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta
+
 class DescricaoEmBrancoException(Exception):
     pass
 
@@ -13,7 +15,6 @@ class Produto:
         quantidade_inicial,
         lote,
         data_validade,
-        AlertaDeEstoqueBaixo
         nome
     ):
         if (nome is None or
@@ -22,7 +23,9 @@ class Produto:
             preco_venda is None or
             quantidade_inicial is None or
             lote is None or
-            data_validade is None):
+            data_validade is None or
+            data_validade.strip() == ""
+            ):
             raise DescricaoEmBrancoException("Todos os atributos devem estar presentes!")
         
         if (preco_compra <= 0 or preco_venda <= 0 or quantidade_inicial <= 0):
@@ -36,6 +39,11 @@ class Produto:
         self.lote = lote
         self.data_validade = data_validade
         self.limite_estoque = 10
+
+    def esta_no_periodo_de_validade(self):
+        data_atual = datetime.now()
+        data_validade_produto = datetime.strptime(self.data_validade, "%d/%m/%Y")
+        return data_validade_produto >= data_atual
 
     def verificar_estoque_baixo(self):
         return self.quantidade_inicial <= int(self.limite_estoque)
