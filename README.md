@@ -14,7 +14,8 @@
 
 O projeto foi desenvolvido na linguagem **Python** com a biblioteca **pytest**. Então, com o Python instalado na máquina, rode os comandos:
 1. Instale o pytest: `pip install pytest unittest parameterized`;
-2. Rode o arquivo com os testes das funcionalidades desejadas por meio de: `pytest <test_arquivo>.py` ou `python3 -m pytest <test_arquivo>.py`
+2. Rode o arquivo com os testes das funcionalidades desejadas por meio de: `pytest <test_arquivo>.py` ou `python3 -m pytest <test_arquivo>.py`;
+3. Para rodar todos os testes de uma vez: `pytest test*`
 
 ## Entendimento do problema
 
