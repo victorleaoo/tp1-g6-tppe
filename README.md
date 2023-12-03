@@ -41,7 +41,8 @@ O trabalho deverá apresentar o emprego das três técnicas de TDD (falsificaç�
       - Commits: https://github.com/victorleaoo/tp1-g6-tppe/commit/b37465f407793f471444e1a1ecb1828537cf907c a https://github.com/victorleaoo/tp1-g6-tppe/commit/1db8439e7beb096b3720d282dd07d1fe104477c2
 
 * **Gestão de Transações:**
-  - Garantir que os seguintes tipos de transações sejam realizadas e os estoques dos produtos sejam atualizados: recebimento de mercadoria, vendas, transferências entre filiais, devoluções, ajustes de estoque. 
+  - Garantir que os seguintes tipos de transações sejam realizadas e os estoques dos produtos sejam atualizados: recebimento de mercadoria, vendas, transferências entre filiais, devoluções, ajustes de estoque.
+    - Commits: https://github.com/victorleaoo/tp1-g6-tppe/commit/ad86c1250dbd3dc0691af5fec7a8c8bc13406f79 a https://github.com/victorleaoo/tp1-g6-tppe/commit/6792057c505888b0bf3bc8d9b085355cbfb1ee10 + https://github.com/victorleaoo/tp1-g6-tppe/commit/8fe29596b3ed4a64926a4a9acbcf7dfcb0686f9c
   - Garantir que não serão informadas quantidades negativas para as transações, exceto para ajustes de estoque. Nos outros casos, lançar exceções do tipo `ValorInvalidoException`. 
     - Commits: https://github.com/victorleaoo/tp1-g6-tppe/commit/ad86c1250dbd3dc0691af5fec7a8c8bc13406f79 a https://github.com/victorleaoo/tp1-g6-tppe/commit/6792057c505888b0bf3bc8d9b085355cbfb1ee10 + https://github.com/victorleaoo/tp1-g6-tppe/commit/8fe29596b3ed4a64926a4a9acbcf7dfcb0686f9c
 
