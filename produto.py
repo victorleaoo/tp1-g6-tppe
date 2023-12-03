@@ -13,6 +13,7 @@ class Produto:
         quantidade_inicial,
         lote,
         data_validade,
+        AlertaDeEstoqueBaixo
         nome
     ):
         if (nome is None or
@@ -34,7 +35,10 @@ class Produto:
         self.quantidade_inicial = quantidade_inicial
         self.lote = lote
         self.data_validade = data_validade
+        self.limite_estoque = 10
 
+    def verificar_estoque_baixo(self):
+        return self.quantidade_inicial <= int(self.limite_estoque)
 
     def consulta_estoque_nome(self, nome):
         if self.nome == nome:
