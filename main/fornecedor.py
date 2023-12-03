@@ -10,3 +10,5 @@ class Fornecedor:
     def validar_id(id):
         if id is None or id is '':
             raise ValueError("ID não pode ser nulo")
+        if isinstance(id, str):
+            raise ValueError("ID não pode ser uma string")
