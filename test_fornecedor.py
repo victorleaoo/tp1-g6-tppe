@@ -12,6 +12,10 @@ class TestFornecedor(unittest.TestCase):
     def test_criar_fornecedor_com_id_invalido(self):
         with self.assertRaises(ValueError):
             Fornecedor(None, "Fornecedor B", "Endereço B", "2023-01-01")
+    
+    def test_criar_fornecedor_com_id_invalido_vazio(self):
+        with self.assertRaises(ValueError):
+            Fornecedor('', "Fornecedor C", "Endereço C", "2023-01-01")
         
 if __name__ == '__main__':
     unittest.main()
