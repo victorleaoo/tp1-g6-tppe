@@ -30,7 +30,7 @@ O trabalho deverá apresentar o emprego das três técnicas de TDD (falsificaç�
     seja cadastrado através do lançamento da exceção `DescricaoEmBrancoException`. -> **OK**
   - Se os valores de compra e venda e a quantidade de itens inicial em estoque
     for menor ou igual a zero, garantir que o item não seja cadastrado através
-    do lançamento da exceção `ValorInvalidoException`.  
+    do lançamento da exceção `ValorInvalidoException`. -> **OK**
   
 * **Consulta de Estoque:** 
   -  Garantir que o produto seja recuperado toda vez que ele for recuperado em
